@@ -1,4 +1,4 @@
-function App() {
+export default function DashboardPage() {
   const stats = [
     { label: 'Active learners', value: '4,820', accent: 'sky' },
     { label: 'Pending approvals', value: '18', accent: 'gold' },
@@ -111,5 +111,3 @@ function App() {
     </main>
   )
 }
-
-export default App
