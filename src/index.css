@@ -3,6 +3,13 @@
 
 :root {
   color-scheme: light;
+  /* ── Admin Red Theme ────────────────────────────────────── */
+  --color-primary:       #dc2626;
+  --color-primary-dark:  #b91c1c;
+  --color-primary-light: #ef4444;
+  --color-primary-glow:  rgba(220, 38, 38, 0.30);
+  --color-primary-soft:  rgba(220, 38, 38, 0.08);
+  --color-accent:        #991b1b;
 }
 
 /* GSAP Compatibility: No CSS transitions on animated elements */
@@ -31,11 +38,11 @@ body {
   font-family: 'Cantarell', sans-serif;
 }
 
-/* Blob gradients */
+/* Blob gradients — Red/Crimson palette */
 .blob-sky {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, rgba(79, 146, 255, 0.45) 0%, rgba(112, 193, 255, 0.2) 35%, transparent 70%);
+  background: radial-gradient(circle at 40% 40%, rgba(220, 38, 38, 0.35) 0%, rgba(239, 68, 68, 0.15) 35%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -44,7 +51,7 @@ body {
 .blob-gold {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 60% 60%, rgba(243, 176, 0, 0.4) 0%, rgba(255, 199, 44, 0.18) 35%, transparent 70%);
+  background: radial-gradient(circle at 60% 60%, rgba(243, 176, 0, 0.35) 0%, rgba(255, 199, 44, 0.15) 35%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -53,7 +60,7 @@ body {
 .blob-teal {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(92, 184, 178, 0.35) 0%, rgba(120, 210, 200, 0.12) 40%, transparent 72%);
+  background: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.2) 0%, rgba(220, 38, 38, 0.1) 40%, transparent 72%);
   filter: blur(70px);
   pointer-events: none;
   z-index: 0;
@@ -63,7 +70,7 @@ body {
 .feature-card {
   background: #ffffff;
   border-radius: 1.25rem;
-  border: 1px solid #e8ecf1;
+  border: 1px solid #fecaca;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -75,7 +82,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 1.25rem;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79, 146, 255, 0.07) 0%, transparent 60%);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(220, 38, 38, 0.06) 0%, transparent 60%);
   opacity: 0;
   pointer-events: none;
   z-index: 0;
@@ -103,7 +110,7 @@ body {
   right: 1.5rem;
   font-size: 5rem;
   font-weight: 900;
-  color: rgba(79, 146, 255, 0.1);
+  color: rgba(220, 38, 38, 0.08);
   line-height: 1;
   pointer-events: none;
 }
@@ -116,7 +123,7 @@ body {
   font-size: 0.95rem;
   cursor: pointer;
   border: 2px solid transparent;
-  background: #F4F7FA;
+  background: #fff1f2;
   color: #5a6c7d;
   position: relative;
   z-index: 1;
@@ -127,14 +134,14 @@ body {
 }
 
 .benefit-tab-btn.active {
-  background: #1A2B49;
+  background: var(--color-primary);
   color: #ffffff;
-  border-color: #1A2B49;
-  box-shadow: 0 4px 20px rgba(26, 43, 73, 0.25);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 20px var(--color-primary-glow);
 }
 
 .benefit-tab-btn:focus-visible {
-  outline: 3px solid #4F92FF;
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 
@@ -154,7 +161,7 @@ body {
 
 /* Email input */
 .email-input {
-  border: 2px solid #dce3ea;
+  border: 2px solid #fca5a5;
   border-radius: 0.75rem;
   padding: 0.9rem 1.25rem;
   font-size: 1rem;
@@ -166,29 +173,38 @@ body {
 }
 
 .email-input:focus {
-  border-color: #4F92FF;
-  box-shadow: 0 0 0 4px rgba(79, 146, 255, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-soft);
 }
 
 /* Focus a11y */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 3px solid #4F92FF;
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Scrollbar */
+/* Scrollbar — red tint */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F7FA;
+  background: #fff1f2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c4cdd6;
+  background: #fca5a5;
   border-radius: 3px;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fca5a5;
+  border-radius: 2px;
 }
 
 @media (max-width: 640px) {
