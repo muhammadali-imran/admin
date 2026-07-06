@@ -22,7 +22,7 @@ export default function TopBar({ title = '' }) {
         <button
           onClick={toggle}
           aria-label="Toggle sidebar"
-          className="p-2 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="p-2 rounded-lg text-slate-500 hover:text-red-700 hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open
@@ -38,7 +38,7 @@ export default function TopBar({ title = '' }) {
       <div className="flex items-center gap-2">
         <button
           onClick={() => navigate('/notifications')}
-          className="relative p-2 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="relative p-2 rounded-lg text-slate-500 hover:text-red-700 hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400"
           aria-label="Notifications"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export default function TopBar({ title = '' }) {
         <div className="relative">
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-100 transition-colors"
+            className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-red-50 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400"
           >
             <Avatar name={user?.name || user?.email} size="sm" />
             <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export default function TopBar({ title = '' }) {
               <div className="fixed inset-0 z-10" onClick={() => setMenuOpen(false)} />
               <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-100 z-20 overflow-hidden">
                 <div className="px-4 py-3 border-b border-slate-100">
-                  <p className="text-sm font-medium text-slate-800 truncate">{user?.name || 'Student'}</p>
+                  <p className="text-sm font-medium text-slate-800 truncate">{user?.name || 'Administrator'}</p>
                   <p className="text-xs text-slate-500 truncate">{user?.email}</p>
                 </div>
                 <MenuItem onClick={() => { navigate('/profile'); setMenuOpen(false) }}>Profile</MenuItem>
@@ -85,7 +85,7 @@ function MenuItem({ children, onClick, danger = false }) {
     <button
       onClick={onClick}
       className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
-        danger ? 'text-red-600 hover:bg-red-50' : 'text-slate-700 hover:bg-slate-50'
+        danger ? 'text-red-600 hover:bg-red-50' : 'text-slate-700 hover:bg-red-50'
       }`}
     >
       {children}

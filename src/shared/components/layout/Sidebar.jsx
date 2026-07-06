@@ -12,14 +12,20 @@ import {
   LifeBuoy,
   Sparkles,
   Users,
-  BarChart3
+  BarChart3,
+  ClipboardCheck,
+  Calendar,
+  Briefcase
 } from 'lucide-react';
 
 const navItems = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/admissions', label: 'Admissions', icon: ClipboardCheck },
   { to: '/users', label: 'Users', icon: Users },
   { to: '/courses', label: 'Courses', icon: BookOpen },
+  { to: '/schedule', label: 'Schedule', icon: Calendar },
   { to: '/finance', label: 'Finance', icon: CreditCard },
+  { to: '/hr', label: 'HR / Staff', icon: Briefcase },
   { to: '/announcements', label: 'Announcements', icon: MessageSquare },
   { to: '/reports', label: 'Reports', icon: BarChart3 },
 ];
@@ -54,7 +60,7 @@ export default function Sidebar() {
         <div className={`flex items-center gap-3 px-4 py-5 border-b border-slate-50 min-h-16 ${!open && 'lg:justify-center lg:px-0'}`}>
           <Sparkles className="w-6 h-6 text-amber-500 fill-amber-400 shrink-0" />
           {open && (
-            <span className="font-bold text-lg tracking-tight text-sky-900">
+            <span className="font-bold text-lg tracking-tight text-red-900">
               Admin Panel
             </span>
           )}
@@ -70,8 +76,8 @@ export default function Sidebar() {
               className={({ isActive }) => `
                 flex items-center gap-3 px-4 py-2.5 mx-2 rounded-xl text-sm font-medium transition-all duration-200
                 ${isActive
-                  ? 'bg-sky-50 text-sky-600 font-semibold' // Sky blue accent background for active item
-                  : 'text-slate-500 hover:text-sky-600 hover:bg-slate-50/70'
+                  ? 'bg-red-50 text-red-600 font-semibold' // Red accent background for active item
+                  : 'text-slate-500 hover:text-red-600 hover:bg-slate-50/70'
                 }
                 ${!open && 'lg:justify-center lg:px-0 lg:mx-1'}
               `}
@@ -80,7 +86,7 @@ export default function Sidebar() {
                 <>
                   <IconComponent 
                     className={`w-5 h-5 shrink-0 transition-colors ${
-                      isActive ? 'text-sky-500' : 'text-slate-400 group-hover:text-sky-500'
+                      isActive ? 'text-red-500' : 'text-slate-400 group-hover:text-red-500'
                     }`} 
                   />
                   {open && <span>{label}</span>}
@@ -100,8 +106,8 @@ export default function Sidebar() {
               className={({ isActive }) => `
                 flex items-center gap-3 px-4 py-2 mx-2 rounded-xl text-sm font-medium transition-all duration-200
                 ${isActive
-                  ? 'bg-sky-50 text-sky-600 font-semibold'
-                  : 'text-slate-500 hover:text-sky-600 hover:bg-slate-100/70'
+                  ? 'bg-red-50 text-red-600 font-semibold'
+                  : 'text-slate-500 hover:text-red-600 hover:bg-slate-100/70'
                 }
                 ${!open && 'lg:justify-center lg:px-0 lg:mx-1'}
               `}
@@ -110,7 +116,7 @@ export default function Sidebar() {
                 <>
                   <IconComponent 
                     className={`w-5 h-5 shrink-0 ${
-                      isActive ? 'text-sky-500' : 'text-slate-400'
+                      isActive ? 'text-red-500' : 'text-slate-400'
                     }`} 
                   />
                   {open && <span>{label}</span>}
@@ -119,7 +125,7 @@ export default function Sidebar() {
             </NavLink>
           ))}
 
-          {/* User profile segment - Upgraded with clean sky/white card borders */}
+          {/* User profile segment */}
           {open && user && (
             <div className="flex items-center gap-3 px-3 py-2.5 mx-2 mt-2 rounded-xl border border-slate-200/60 bg-white shadow-sm">
               <Avatar name={user.name || user.email} size="sm" className="ring-2 ring-amber-400/30" />

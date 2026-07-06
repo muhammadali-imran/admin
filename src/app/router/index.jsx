@@ -6,6 +6,9 @@ import { usersRoutes } from '@features/users/routes'
 import { coursesRoutes } from '@features/courses/routes'
 import { financeRoutes } from '@features/finance/routes'
 import { settingsRoutes } from '@features/settings/routes'
+import { admissionsRoutes } from '@features/admissions/routes'
+import { scheduleRoutes } from '@features/schedule/routes'
+import { hrRoutes } from '@features/hr/routes'
 import MainLayout from '@shared/layouts/MainLayout'
 
 function LazyLoad({ children }) {
@@ -39,6 +42,9 @@ export default function AppRouter() {
         {coursesRoutes.map(renderRoute)}
         {financeRoutes.map(renderRoute)}
         {settingsRoutes.map(renderRoute)}
+        {admissionsRoutes.map(renderRoute)}
+        {scheduleRoutes.map(renderRoute)}
+        {hrRoutes.map(renderRoute)}
       </Route>
 
       {NotFoundPage && (
